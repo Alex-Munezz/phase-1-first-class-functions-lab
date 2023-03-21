@@ -1,33 +1,65 @@
-const returnFirstTwoDrivers = ['mainDriver', 'secondDriver', 'thirdDriver']
-console.log(returnFirstTwoDrivers)
+const drivers = ["Erick", "Lion", "Mark", "Alex"];
 
-for(let index = 0;index<=returnFirstTwoDrivers.length-2; index++)
-console.log(returnFirstTwoDrivers[index])
+function returnFirstTwoDrivers() {
+
+  const newDrivers = drivers.slice(0, 2);
+
+  return newDrivers;
+
+}
+
+function returnLastTwoDrivers() {
+
+  const lastTwo = drivers.slice(2);
+
+  return lastTwo;
+
+}
+
+function returnFirstTwoDrivers(drivers) {
+
+    return drivers.slice(0, 2);
+
+  }
 
 
 
-const returnLastTwoDrivers = ['mainDriver', 'secondDriver', 'thirdDriver']
-console.log(returnLastTwoDrivers)
+
+  function returnLastTwoDrivers(drivers) {
+
+    return drivers.slice(-2);
+
+  }
 
 
-for(let index = 0;index<=secondDriver.length-1; index++)
-console.log(returnLastTwoDrivers[index])
 
-function createFareMultiplier(int) {
-    return function(fare=5) {
-        return fare * int;
+
+  const selectingDrivers = [returnFirstTwoDrivers, returnLastTwoDrivers];
+
+function createFareMultiplier(multiplier) {
+
+    return function fareMultipler(fare){
+
+        return fare*multiplier;
+
     }
+
 }
 
-const fareDoubler = function(fare) {
-    return createFareMultiplier(2)(fare);
+function fareDoubler(fare) {
+
+    return fare *2
+
 }
 
-const fareTripler = function(fare) {
-    return createFareMultiplier(3)(fare);
+function fareTripler(fare) {
+
+return fare*3;
+
 }
 
-function selectDifferentDrivers(driversArray, fn) {
-    return fn(driversArray);
-}
+function selectDifferentDrivers(arrayOfDrivers, driverSelector) {
 
+    return driverSelector(arrayOfDrivers);
+
+  }
